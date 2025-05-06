@@ -1,0 +1,394 @@
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Dashboard with Sidebar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <style>
+    /* General Body and Layout */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background-color: #f1f5f9;
+      background-image: url('../../assets/imgs/a648ca9a-e5cd-4b33-bd6c-148a00f7aac3.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+      overflow: hidden;
+      background-size: 2225px;
+    }
+
+    /* Dark Overlay */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      height: 100vh;
+      background-color: #2b3d1f;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 10px;
+      box-sizing: border-box;
+      transition: width 0.3s ease;
+      position: fixed;
+      top: 0;
+      left: 0;
+      gap: 20px;
+      z-index: 10;
+    }
+
+    /* Collapsed Sidebar */
+    .sidebar.collapsed {
+      width: 70px;
+    }
+
+    .sidebar.collapsed .menu-btn .text,
+    .sidebar.collapsed .dropdown-content {
+      display: none;
+    }
+
+    .sidebar.collapsed .menu-btn {
+      justify-content: center;
+    }
+
+    /* Dropdown Content */
+    .dropdown-content {
+      display: none;
+      flex-direction: column;
+      margin-left: 25px;
+      padding: 8px;
+      gap: 10px;
+    }
+
+    /* Patient Buttons */
+    .patient-btn {
+      background-color: #fbbf24;
+      color: black;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 20px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.3s ease;
+      margin-bottom: 10px;
+      display: block;
+      text-align: left;
+    }
+
+    .patient-btn:hover {
+      background-color: #facc15;
+      transform: translateX(5px);
+    }
+
+    /* Adjust Menu Button for Collapsed Sidebar */
+    .sidebar.collapsed .menu-btn {
+      padding: 12px 15px;
+      justify-content: center;
+      gap: 0;
+    }
+
+    /* Hide text for the 'My Patients' button in collapsed sidebar */
+    .sidebar.collapsed #patients-btn .text {
+      display: none;
+    }
+
+    /* Keep dropdown content hidden when collapsed */
+    .sidebar.collapsed .dropdown-content {
+      display: none;
+    }
+
+    /* Adjust the icon size for consistency when collapsed */
+    .sidebar.collapsed #patients-btn .icon {
+      width: 20px;
+      height: 20px;
+    }
+
+    /* Menu Button Styling */
+    .menu-btn {
+      display: flex;
+      align-items: center;
+      background-color: #fbbf24;
+      color: black;
+      border: none;
+      border-radius: 6px;
+      padding: 12px 60px;
+      font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.3s ease;
+      gap: 15px;
+      margin-bottom: 15px;
+      white-space: nowrap; /* Prevent text wrapping */
+    }
+
+    .menu-btn:hover {
+      background-color: #facc15;
+      transform: translateX(5px);
+    }
+
+    .menu-btn .icon {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    /* Hover Effect for Menu Icon */
+    .menu-icon {
+      cursor: pointer;
+      margin-left: 10px;
+      margin-bottom: 20px;
+    }
+
+    .menu-icon img {
+      width: 30px;
+      height: 30px;
+    }
+
+    /* Dropdown Hover Effects */
+    .dropdown-content a {
+      color: #2b3d1f;
+      text-decoration: none;
+      padding: 8px 0;
+      font-size: 14px;
+    }
+
+    .dropdown-content a:hover {
+      font-weight: bold;
+      background-color: #f0f0f0;
+    }
+
+    /* Logout Button */
+    .logout-btn {
+      margin-top: auto;
+      background-color: #556b2f;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      gap: 15px;
+      text-decoration: none;
+      white-space: nowrap; /* Prevent text wrapping */
+    }
+
+    .logout-btn .icon {
+      margin-left: -3px;
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    .sidebar.collapsed .logout-btn .text {
+      display: none;
+    }
+
+    /* Main content container */
+    .main-content {
+      margin-left: 250px;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5rem;
+      padding: 5rem 1rem;
+      position: relative;
+      z-index: 5;
+    }
+
+    .sidebar.collapsed ~ .main-content {
+      margin-left: 70px;
+    }
+
+    /* Icon container */
+    .icon-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .icon-block img {
+      width: 150px;
+      height: 150px;
+      object-fit: contain;
+    }
+
+    /* The text below icons */
+    .icon-label {
+      background-color: #273615;
+      border-radius: 9999px;
+      padding: 0.25rem 1rem;
+      font-family: serif;
+      font-size: 1.125rem; /* text-lg */
+      color: white;
+      white-space: nowrap;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+        margin-left: 0;
+        padding: 2rem 1rem;
+        gap: 3rem;
+      }
+      .sidebar {
+        position: fixed;
+        z-index: 20;
+      }
+      .sidebar.collapsed ~ .main-content {
+        margin-left: 0;
+      }
+    }
+    .icon-block img:hover {
+        filter: brightness(0) invert(0.8);
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="sidebar" id="sidebar">
+    <div class="menu-icon" id="menu-toggle" aria-label="Toggle menu" role="button" tabindex="0">
+      <img src="./assets/imgs/menu.png" alt="Menu Icon" />
+    </div>
+
+    <div class="menu-items">
+      <a href="../page2/index.html" class="menu-btn">
+        <img
+          src="./assets/imgs/home.png"
+          class="icon"
+          alt="Home Icon"
+        />
+        <span class="text">Home</span>
+      </a>
+
+      <div class="dropdown">
+        <button class="menu-btn" id="patients-btn" aria-expanded="false" aria-controls="patients-dropdown">
+          <img
+            src="./assets/imgs/patient.png"
+            class="icon"
+            alt="Patients Icon"
+          />
+          <span class="text">My Patients</span>
+        </button>
+        <div class="dropdown-content" id="patients-dropdown" role="region" aria-label="Patients Dropdown">
+          <a href="../patient 1/index.html" class="patient-btn">Patient 1</a>
+          <a href="patient2.html" class="patient-btn">Patient 2</a>
+        </div>
+      </div>
+
+      <a href="../inbox/message1.html" class="menu-btn">
+        <img
+          src="./assets/imgs/inbox.png"
+          class="icon"
+          alt="Inbox Icon"
+        />
+        <span class="text">Inbox</span>
+      </a>
+
+      <a href="../schedule/index.html" class="menu-btn">
+        <img
+          src="./assets/imgs/calendar.png"
+          class="icon"
+          alt="Schedule Icon"
+        />
+        <span class="text">Schedule</span>
+      </a>
+
+      <a href="settings.html" class="menu-btn">
+        <img
+          src="./assets/imgs/settings.png"
+          class="icon"
+          alt="Settings Icon"
+        />
+        <span class="text">Settings</span>
+      </a>
+    </div>
+
+    <a href="logout.html" class="logout-btn">
+      <img
+        src="./assets/imgs/logout.png"
+        class="icon"
+        alt="Logout Icon"
+      />
+      <span class="text">Logout</span>
+    </a>
+  </div>
+
+  <main class="main-content" role="main" aria-label="Dashboard main content">
+    <a href="./sched.html" class="icon-block">
+      <img
+        src="./assets/imgs/calendar.png"
+        alt="Doctor's Schedule Icon, green calendar with check marks, no background"
+      />
+      <span class="icon-label">Doctor’s Schedule</span>
+    </a>
+  
+    <a href="./rotation.html" class="icon-block">
+      <img
+        src="./assets/imgs/employee.png"
+        alt="Nurses Rotation & Shift Icon, green note with pencil, no background"
+      />
+      <span class="icon-label">Nurses Rotation &amp; Shift</span>
+    </a>
+  
+    <a href="./lab.html" class="icon-block">
+      <img
+        src="./assets/imgs/patients.png"
+        alt="LAB Patients Icon, green folder with papers, no background"
+      />
+      <span class="icon-label">LAB Patients</span>
+    </a>
+  </main>
+
+
+  <script>
+    // Toggle the sidebar collapse state
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.getElementById('menu-toggle');
+    const patientsBtn = document.getElementById('patients-btn');
+    const patientsDropdown = document.getElementById('patients-dropdown');
+
+    toggleBtn.addEventListener('click', () => {
+      sidebar.classList.toggle('collapsed');
+      if (sidebar.classList.contains('collapsed')) {
+        patientsDropdown.style.display = 'none';
+        patientsBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    patientsBtn.addEventListener('click', () => {
+      if (!sidebar.classList.contains('collapsed')) {
+        if (patientsDropdown.style.display === 'block') {
+          patientsDropdown.style.display = 'none';
+          patientsBtn.setAttribute('aria-expanded', 'false');
+        } else {
+          patientsDropdown.style.display = 'block';
+          patientsBtn.setAttribute('aria-expanded', 'true');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
