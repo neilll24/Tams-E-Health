@@ -1,0 +1,67 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Schedule
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap');
+  </style>
+ </head>
+ <body class="bg-[#f9f9e6] min-h-screen flex">
+  <!-- Sidebar -->
+  <div class="bg-[#f9f9e6] w-16 flex flex-col">
+    <a href="./index.html" aria-label="Menu" class="mt-4 ml-2 space-y-2">
+      <span class="block w-10 h-1 bg-[#2f3a0f] rounded"></span>
+      <span class="block w-10 h-1 bg-[#2f3a0f] rounded"></span>
+      <span class="block w-10 h-1 bg-[#2f3a0f] rounded"></span>
+    </a>
+  </div>
+  
+  <div class="flex-1 flex flex-col">
+   <!-- Top bar -->
+   <header class="bg-[#2f3a0f] flex items-center px-8 py-4">
+    <h1 class="text-white font-serif text-3xl" style="font-family: 'Times New Roman', serif;">
+     SCHEDULE
+    </h1>
+    <div class="flex-1 flex justify-center space-x-20">
+     <a class="flex flex-col items-center text-[#f9c14e] font-serif text-base" href="./sched.html">
+      <img alt="Doctor's Schedule Icon, green calendar with check marks, no background" class="w-12 h-12 mb-1" src="./assets/imgs/calendar.png"/>
+      Doctor’s Schedule
+     </a>
+     <a class="flex flex-col items-center text-[#f9c14e] font-serif text-base" href="./rotation.html">
+      <img alt="Nurses Rotation &amp; Shift Icon, green note with pencil, no background" class="w-12 h-12 mb-1" src="./assets/imgs/employee.png"/>
+      Nurse’s Rotation &amp; Shift
+     </a>
+     <a class="flex flex-col items-center text-[#f9c14e] font-serif text-base" href="./lab.html">
+      <img alt="LAB Patients Icon, green folder with papers, no background" class="w-12 h-12 mb-1" src="./assets/imgs/patients.png"/>
+      LAB Patients
+     </a>
+    </div>
+   </header>
+   <!-- Main content with background image -->
+   <main class="relative flex-1 flex justify-center items-center px-20 py-10">
+    <img alt="Hospital campus with statue and trees in the background" class="absolute inset-0 w-full h-full object-cover opacity-40 -z-10 rounded" height="600" src="https://storage.googleapis.com/a1aa/image/ed6657d8-e459-4109-7778-1c3cbd088b82.jpg" width="1200"/>
+  
+    <div class="flex justify-center gap-40 w-full max-w-6xl">
+      
+      <a href="./sched2.html" class="flex flex-col items-center">
+        <img alt="Male doctor avatar with brown hair, black suit, white shirt, and red tie on teal background circle" class="rounded-full" height="200" src="https://storage.googleapis.com/a1aa/image/a2c6c742-6508-4bf4-f542-20dc9e2a5e07.jpg" width="200"/>
+        <p class="mt-4 font-bold text-xl text-black">Dr. James</p>
+      </a>
+      
+      <a href="./sched3.html" class="flex flex-col items-center">
+        <img alt="Female doctor avatar with brown hair, red sweater, white collar on light blue background circle" class="rounded-full" height="200" src="https://storage.googleapis.com/a1aa/image/9c96cb3c-1898-46e1-d885-3f181a6f3ea0.jpg" width="200"/>
+        <p class="mt-4 font-bold text-xl text-black">Dr. Felisha</p>
+      </a>
+  
+     </div>
+    </div>
+   </main>
+  </div>
+ </body>
+</html>

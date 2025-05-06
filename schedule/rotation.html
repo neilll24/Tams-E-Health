@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Nursing Services</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+   rel="stylesheet"
+  />
+  <style>
+   @import url("https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap");
+   body {
+    font-family: "Times New Roman", serif;
+   }
+  </style>
+ </head>
+ <body class="bg-[#f9f9e6] min-h-screen flex">
+  <!-- Sidebar -->
+  <div class="bg-[#f9f9e6] w-16 flex flex-col">
+   <a href="./index.html" aria-label="Menu" class="mt-4 ml-2 space-y-2">
+    <span class="block w-10 h-1 bg-[#2f3a0f] rounded"></span>
+    <span class="block w-10 h-1 bg-[#2f3a0f] rounded"></span>
+    <span class="block w-10 h-1 bg-[#2f3a0f] rounded"></span>
+   </a>
+  </div>
+
+  <div class="flex-1 flex flex-col">
+   <!-- Top bar -->
+   <header class="bg-[#2f3a0f] flex items-center px-8 py-4">
+    <h1
+     class="text-white font-serif text-3xl"
+     style="font-family: 'Times New Roman', serif"
+    >
+     SCHEDULE
+    </h1>
+    <div class="flex-1 flex justify-center space-x-20">
+     <a
+      class="flex flex-col items-center text-[#f9c14e] font-serif text-base"
+      href="./sched.html"
+     >
+      <img
+       alt="Doctor's Schedule Icon, green calendar with check marks, no background"
+       class="w-12 h-12 mb-1"
+       src="./assets/imgs/calendar.png"
+      />
+      Doctor’s Schedule
+     </a>
+     <a
+      class="flex flex-col items-center text-[#f9c14e] font-serif text-base"
+      href="./rotation.html"
+     >
+      <img
+       alt="Nurses Rotation &amp; Shift Icon, green note with pencil, no background"
+       class="w-12 h-12 mb-1"
+       src="./assets/imgs/employee.png"
+      />
+      Nurse’s Rotation &amp; Shift
+     </a>
+     <a
+      class="flex flex-col items-center text-[#f9c14e] font-serif text-base"
+      href="./lab.html"
+     >
+      <img
+       alt="LAB Patients Icon, green folder with papers, no background"
+       class="w-12 h-12 mb-1"
+       src="./assets/imgs/patients.png"
+      />
+      LAB Patients
+     </a>
+    </div>
+   </header>
+
+   <!-- Main content with enlarged background image -->
+   <main class="relative flex-1 flex justify-center items-center px-20 py-10">
+    <img
+     alt="Hospital campus with statue and trees in the background"
+     class="absolute inset-0 w-full h-full object-cover opacity-30 -z-10 scale-110"
+     src="https://storage.googleapis.com/a1aa/image/ed6657d8-e459-4109-7778-1c3cbd088b82.jpg"
+    />
+
+    <section
+     class="bg-[#fff9e0] border border-black rounded-tl-3xl rounded-tr-3xl rounded-bl-3xl rounded-br-3xl p-6 max-w-7xl w-full"
+    >
+     <div class="flex justify-center mb-10">
+      <h2
+       class="bg-[#2f3a0f] text-[#f9c14e] text-4xl font-serif font-semibold px-12 py-4 border-4 border-[#d4af37]"
+      >
+       Nursing Services
+      </h2>
+     </div>
+     <div class="flex justify-center space-x-20 mb-10">
+      <div class="flex flex-col items-center">
+       <img
+        alt="Nurse portrait"
+        class="rounded-full w-50 h-50 object-cover bg-sky-300"
+        src="./assets/imgs/reyes.jpg"
+        width="160"
+        height="160"
+       />
+       <p class="font-bold text-lg mt-2 text-black text-center max-w-[160px]">
+        Reyes, Frhea Suzzane C.
+       </p>
+      </div>
+      <div class="flex flex-col items-center">
+       <img
+        alt="Nurse portrait"
+        class="rounded-full w-50 h-50 object-cover bg-sky-300"
+        src="./assets/imgs/rosete.jpg"
+        width="160"
+        height="160"
+       />
+       <p class="font-bold text-lg mt-2 text-black text-center max-w-[160px]">
+        Rosete, Argen Gabriel M.
+       </p>
+      </div>
+      <div class="flex flex-col items-center">
+       <img
+        alt="Nurse portrait"
+        class="rounded-full w-50 h-50 object-cover bg-sky-300"
+        src="./assets/imgs/aaron.jpeg"
+        width="160"
+        height="160"
+       />
+       <p class="font-bold text-lg mt-2 text-black text-center max-w-[160px]">
+        Runes, Aaron B.
+       </p>
+      </div>
+     </div>
+     <div class="flex justify-center space-x-20">
+      <div class="flex flex-col items-center">
+       <img
+        alt="Nurse portrait"
+        class="rounded-full w-50 h-50 object-cover bg-slate-300"
+        src="./assets/imgs/salas.JPG"
+        width="160"
+        height="160"
+       />
+       <p class="font-bold text-lg mt-2 text-black text-center max-w-[160px]">
+        Salas, Iverson John C.
+       </p>
+      </div>
+      <div class="flex flex-col items-center">
+       <img
+        alt="Nurse portrait"
+        class="rounded-full w-50 h-50 object-cover bg-slate-300"
+        src="./assets/imgs/santos.jpg"
+        width="160"
+        height="160"
+       />
+       <p class="font-bold text-lg mt-2 text-black text-center max-w-[160px]">
+        Santos, Kaye Zhandra S.
+       </p>
+      </div>
+     </div>
+    </section>
+
+    <!-- Arrow button link -->
+    <a
+     href="./rotation2.html"
+     aria-label="Next"
+     class="absolute bottom-6 right-6 border-2 border-black rounded-full w-16 h-16 flex items-center justify-center bg-transparent hover:bg-black hover:text-white transition"
+    >
+     <i class="fas fa-arrow-right text-3xl"></i>
+    </a>
+   </main>
+  </div>
+ </body>
+</html>

@@ -1,0 +1,190 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Schedule
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap');
+  </style>
+ </head>
+ <body class="bg-[#f9f9e6] min-h-screen flex">
+  <!-- Sidebar -->
+  <div class="bg-[#f9f9e6] w-16 flex flex-col">
+    <a href="./index.html" aria-label="Menu" class="mt-4 ml-2 space-y-2">
+      <span class="block w-10 h-1 bg-[#2f3a0f] rounded"></span>
+      <span class="block w-10 h-1 bg-[#2f3a0f] rounded"></span>
+      <span class="block w-10 h-1 bg-[#2f3a0f] rounded"></span>
+    </a>
+  </div>
+  
+  <div class="flex-1 flex flex-col">
+   <!-- Top bar -->
+   <header class="bg-[#2f3a0f] flex items-center px-8 py-4">
+    <h1 class="text-white font-serif text-3xl" style="font-family: 'Times New Roman', serif;">
+     SCHEDULE
+    </h1>
+    <div class="flex-1 flex justify-center space-x-20">
+     <a class="flex flex-col items-center text-[#f9c14e] font-serif text-base" href="./sched.html">
+      <img alt="Doctor's Schedule Icon, green calendar with check marks, no background" class="w-12 h-12 mb-1" src="./assets/imgs/calendar.png"/>
+      Doctor’s Schedule
+     </a>
+     <a class="flex flex-col items-center text-[#f9c14e] font-serif text-base" href="./rotation.html">
+      <img alt="Nurses Rotation &amp; Shift Icon, green note with pencil, no background" class="w-12 h-12 mb-1" src="./assets/imgs/employee.png"/>
+      Nurse’s Rotation &amp; Shift
+     </a>
+     <a class="flex flex-col items-center text-[#f9c14e] font-serif text-base" href="./lab.html">
+      <img alt="LAB Patients Icon, green folder with papers, no background" class="w-12 h-12 mb-1" src="./assets/imgs/patients.png"/>
+      LAB Patients
+     </a>
+    </div>
+   </header>
+
+   <main class="relative flex-1 flex justify-center items-center px-20 py-10">
+    <img alt="Hospital campus with statue and trees in the background" class="absolute inset-0 w-full h-full object-cover opacity-40 -z-10 rounded" height="600" src="https://storage.googleapis.com/a1aa/image/ed6657d8-e459-4109-7778-1c3cbd088b82.jpg" width="1200"/>
+    <section class="bg-[#fff9e0] border border-black rounded-tl-3xl rounded-tr-3xl rounded-bl-3xl rounded-br-3xl p-6 max-w-7xl w-full">
+     <div class="flex items-center gap-4 border-b border-black pb-3 mb-3">
+      <img alt="Female doctor avatar with brown hair wearing a red top on a light blue circular background" class="w-12 h-12 rounded-full flex-shrink-0" decoding="async" height="48" loading="lazy" src="https://storage.googleapis.com/a1aa/image/bfd6e2cb-e77e-4e6a-21f4-4fa5af8c7276.jpg" width="48"/>
+      <p class="text-lg font-normal whitespace-nowrap select-text">
+       Dr. Felisha Ramirez
+      </p>
+      <div class="border-l border-black h-6"></div>
+      <h2 class="text-xl font-normal tracking-wide uppercase select-text">
+       DAILY SCHEDULE
+      </h2>
+     </div>
+     <p class="mb-3 text-base select-text">
+      <span class="text-[#2f6b3a] font-normal">
+       Working Days:
+      </span>
+      Monday, Wednesday, Friday
+      <span class="text-[#2f6b3a] font-normal ml-4">
+       Working Hours:
+      </span>
+      8:00 AM – 4:00 PM
+      <span class="text-[#2f6b3a] font-normal ml-4">
+       Lunch Break:
+      </span>
+      12:00 PM – 1:00 PM
+     </p>
+     <div class="border border-black rounded-tl-3xl rounded-tr-3xl rounded-bl-lg rounded-br-lg p-6 overflow-x-auto">
+      <table class="w-full border-collapse text-sm">
+       <thead>
+        <tr class="text-center text-black">
+         <th class="bg-[#6b8e58] rounded-full py-1 px-4 font-extrabold text-xs uppercase">
+          TIME
+         </th>
+         <th class="bg-[#6b8e58] rounded-full py-1 px-4 font-extrabold text-xs uppercase">
+          PATIENT’S NAME
+         </th>
+         <th class="bg-[#6b8e58] rounded-full py-1 px-4 font-extrabold text-xs uppercase">
+          ROOM NO.
+         </th>
+         <th class="bg-[#6b8e58] rounded-full py-1 px-4 font-extrabold text-xs uppercase">
+          NOTES
+         </th>
+        </tr>
+       </thead>
+       <tbody class="text-left align-top">
+        <tr>
+         <td class="py-0.5 px-2">8:00–8:30 AM</td>
+         <td class="py-0.5 px-2">JAMES HOLLOWAY</td>
+         <td class="py-0.5 px-2">201</td>
+         <td class="py-0.5 px-2">ROUTINE CHECK-UP</td>
+        </tr>
+        <tr>
+         <td class="py-0.5 px-2">8:30-9:00 AM</td>
+         <td class="py-0.5 px-2">ANNA WHITMORE</td>
+         <td class="py-0.5 px-2">202</td>
+         <td class="py-0.5 px-2">POST-SURGERY FOLLOW-UP</td>
+        </tr>
+        <tr>
+         <td class="py-0.5 px-2">9:00-9:30 AM</td>
+         <td class="py-0.5 px-2">CHARLES GOMEZ</td>
+         <td class="py-0.5 px-2">205</td>
+         <td class="py-0.5 px-2">BLOOD PRESSURE CHECK</td>
+        </tr>
+        <tr>
+         <td class="py-0.5 px-2">9:30-10:00 AM</td>
+         <td class="py-0.5 px-2">EMILY CARTER</td>
+         <td class="py-0.5 px-2">208</td>
+         <td class="py-0.5 px-2">DIABETES MANAGEMENT</td>
+        </tr>
+        <tr>
+         <td class="py-0.5 px-2">10:00-10:30 AM</td>
+         <td class="py-0.5 px-2">SURGERY BLOCK</td>
+         <td class="py-0.5 px-2">OR1</td>
+         <td class="py-0.5 px-2">MINOR PROCEDURE(HERNIA)</td>
+        </tr>
+        <tr>
+         <td class="py-0.5 px-2">10:30-11:00 AM</td>
+         <td class="py-0.5 px-2">SURGERY BLOCK</td>
+         <td class="py-0.5 px-2">OR1</td>
+         <td class="py-0.5 px-2">WOUND DEBRIDEMENT</td>
+        </tr>
+        <tr>
+         <td class="py-0.5 px-2">11:00-11:30 AM</td>
+         <td class="py-0.5 px-2">LUKE PATTERSON</td>
+         <td class="py-0.5 px-2">210</td>
+         <td class="py-0.5 px-2">RESPIRATORY CHECK-UP</td>
+        </tr>
+        <tr>
+         <td class="py-0.5 px-2">11:30-12:00 PM</td>
+         <td class="py-0.5 px-2">OLIVIA SUMMERS</td>
+         <td class="py-0.5 px-2">213</td>
+         <td class="py-0.5 px-2">ROUTINE CHECK-UP</td>
+        </tr>
+        <tr>
+         <td class="py-0.5 px-2">12:00-1:00PM</td>
+         <td class="py-0.5 px-2 font-semibold">LUNCH BREAK</td>
+         <td class="py-0.5 px-2"></td>
+         <td class="py-0.5 px-2"></td>
+        </tr>
+        <tr>
+         <td class="py-0.5 px-2">1:00-1:30PM</td>
+         <td class="py-0.5 px-2">NATHAN BRIGGS</td>
+         <td class="py-0.5 px-2">215</td>
+         <td class="py-0.5 px-2">DISCHARGE EVALUATION</td>
+        </tr>
+        <tr>
+         <td class="py-0.5 px-2">1:30-2:00PM</td>
+         <td class="py-0.5 px-2">MIA THOMPSON</td>
+         <td class="py-0.5 px-2">218</td>
+         <td class="py-0.5 px-2">CAST REMOVAL</td>
+        </tr>
+        <tr>
+         <td class="py-0.5 px-2">2:00-2:30 PM</td>
+         <td class="py-0.5 px-2">ETHAN MORALES</td>
+         <td class="py-0.5 px-2">211</td>
+         <td class="py-0.5 px-2">CHEST PAIN FOLLOW-UP</td>
+        </tr>
+        <tr>
+         <td class="py-0.5 px-2">2:30-3:00 PM</td>
+         <td class="py-0.5 px-2">LILY FERNANDEZ</td>
+         <td class="py-0.5 px-2">214</td>
+         <td class="py-0.5 px-2">ROUTINE CHECK-UP</td>
+        </tr>
+        <tr>
+         <td class="py-0.5 px-2">3:00- 3:30 PM</td>
+         <td class="py-0.5 px-2">BENJAMIN OWENS</td>
+         <td class="py-0.5 px-2">212</td>
+         <td class="py-0.5 px-2">PHYSICAL THERAPY REVIEW</td>
+        </tr>
+        <tr>
+         <td class="py-0.5 px-2">3:30-4:00 PM</td>
+         <td class="py-0.5 px-2">SOPHIA DAVIDSON</td>
+         <td class="py-0.5 px-2">209</td>
+         <td class="py-0.5 px-2">MEDICATION ADJUSTMENT</td>
+        </tr>
+       </tbody>
+      </table>
+     </div>
+    </section>
+   </main>
+  </div>
+ </body>
+</html>
